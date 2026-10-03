@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="relative overflow-hidden pt-28 lg:pt-32">
       {/* marca d'água */}
-      <Monogram grow style={{ animationDelay: "0.4s" }} className="pointer-events-none absolute -left-24 top-24 h-[34rem] w-auto text-forest/[0.035] sm:h-[44rem] lg:-left-10 lg:top-16 lg:h-[52rem]" />
+      <Monogram grow style={{ animationDelay: "0.4s" }} className="pointer-events-none absolute left-1 top-24 h-[28rem] w-auto text-forest/[0.035] sm:left-0 sm:h-[40rem] lg:left-2 lg:top-20 lg:h-[46rem]" />
 
       <div className="container-ed relative grid items-center gap-16 pb-24 lg:grid-cols-12 lg:gap-8 lg:pb-36">
         <div className="lg:col-span-7 lg:pr-10">
