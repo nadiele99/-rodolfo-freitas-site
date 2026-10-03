@@ -70,6 +70,9 @@ export const site = {
   /** Telefone para exibição (opcional). */
   phone: "", // TODO
 
+  /** Link para clientes deixarem avaliação no Google (aparece só na página /link). */
+  googleReviews: "https://share.google/sPhUPOdZrxWQeEEPH",
+
   instagram: {
     /** Sem o @. Ex.: "rodolfofreitas" */
     handle: "", // TODO: inserir perfil oficial do Instagram
@@ -115,7 +118,6 @@ export const site = {
     { slug: "ultrassom", name: "Ultrassom", description: "", icon: "ultrasound" },
     { slug: "prp", name: "PRP", description: "", icon: "prp" },
     { slug: "botox", name: "Botox", description: "", icon: "botox" },
-    { slug: "cronograma-individualizado", name: "Cronograma individualizado", description: "", icon: "schedule" },
   ] satisfies Service[],
 
   // ------------------------------------------------------------ Resultados
@@ -132,7 +134,7 @@ export const site = {
   process: [
     { title: "Avaliação", text: "Primeiro encontro para ouvir sua queixa, seus hábitos e seu histórico." },
     { title: "Análise", text: "Observação cuidadosa do couro cabeludo e dos fios." },
-    { title: "Plano individualizado", text: "Definição dos cuidados e do cronograma adequados ao seu caso." },
+    { title: "Plano individualizado", text: "Definição dos cuidados e de um cronograma individualizado para o seu caso." },
     { title: "Acompanhamento", text: "Retornos para acompanhar a evolução e ajustar o plano quando necessário." },
   ],
 

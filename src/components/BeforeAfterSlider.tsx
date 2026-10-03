@@ -8,6 +8,8 @@ type Props = {
   after?: string;
   alt: string;
   className?: string;
+  /** Classe de proporção do quadro (ex.: "aspect-[5/8]" para fotos verticais). */
+  aspectClass?: string;
 };
 
 /**
@@ -17,7 +19,7 @@ type Props = {
  * - touch-action: pan-y — o scroll vertical da página continua funcionando no celular.
  * Sem imagens, renderiza placeholders claramente identificados.
  */
-export function BeforeAfterSlider({ before, after, alt, className = "" }: Props) {
+export function BeforeAfterSlider({ before, after, alt, className = "", aspectClass = "aspect-[4/5] sm:aspect-[5/4]" }: Props) {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -45,7 +47,7 @@ export function BeforeAfterSlider({ before, after, alt, className = "" }: Props)
     <div className={className}>
       <div
         ref={ref}
-        className="relative aspect-[4/5] w-full cursor-ew-resize touch-pan-y select-none overflow-hidden bg-beige sm:aspect-[5/4]"
+        className={`relative ${aspectClass} w-full cursor-ew-resize touch-pan-y select-none overflow-hidden bg-beige`}
         onPointerDown={onDown}
         onPointerMove={onMove}
         onPointerUp={onUp}
@@ -59,8 +61,8 @@ export function BeforeAfterSlider({ before, after, alt, className = "" }: Props)
         </div>
 
         {/* Rótulos discretos */}
-        <span className="eyebrow pointer-events-none absolute left-5 top-5 text-[0.6rem]! text-forest/80 sm:left-7 sm:top-7">Antes</span>
-        <span className="eyebrow pointer-events-none absolute right-5 top-5 text-[0.6rem]! text-forest/80 sm:right-7 sm:top-7">Depois</span>
+        <span className="eyebrow pointer-events-none absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1.5 text-[0.56rem]! text-forest sm:left-5 sm:top-5">Antes</span>
+        <span className="eyebrow pointer-events-none absolute right-4 top-4 rounded-full bg-cream/90 px-3 py-1.5 text-[0.56rem]! text-forest sm:right-5 sm:top-5">Depois</span>
 
         {/* Divisor */}
         <div className="pointer-events-none absolute inset-y-0" style={{ left: `${pos}%` }} aria-hidden>
@@ -107,7 +109,7 @@ function Layer({
   placeholder: boolean;
 }) {
   if (!placeholder && src) {
-    return <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" draggable={false} />;
+    return <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 26rem, 100vw" className="object-cover" draggable={false} />;
   }
   return (
     <div

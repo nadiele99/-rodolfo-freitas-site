@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Globe, Leaf, MapPin, UserRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Globe, Leaf, MapPin, Star, UserRound } from "lucide-react";
 import { site } from "@/data/site";
 import { addressLines, instagramHref, instagramLabel, mapsDirectionsHref, whatsappHref } from "@/lib/links";
 import { Monogram } from "./Monogram";
@@ -20,6 +20,7 @@ export function LinkBio() {
     { href: "/#sobre", label: "Sobre", hint: "Apresentação profissional", icon: <UserRound strokeWidth={1.2} className="size-[18px]" /> },
     { href: instagramHref(), label: "Instagram", hint: instagramLabel() === "Instagram" ? "Acompanhe o dia a dia" : instagramLabel(), icon: <InstagramIcon className="size-[18px]" />, external: true },
     { href: mapsDirectionsHref(), label: "Localização", hint: `${a.line1} · ${site.city}`, icon: <MapPin strokeWidth={1.2} className="size-[18px]" />, external: true },
+    { href: site.googleReviews, label: "Avalie no Google", hint: "Conte como foi seu atendimento", icon: <Star strokeWidth={1.2} className="size-[18px]" />, external: true },
     { href: "/", label: "Conheça o site", hint: "Tudo sobre o atendimento", icon: <Globe strokeWidth={1.2} className="size-[18px]" /> },
   ];
 

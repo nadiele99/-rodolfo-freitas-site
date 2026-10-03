@@ -61,22 +61,23 @@ export function ResultsGallery({ items }: { items: ResultPair[] }) {
           )}
         </Reveal>
 
-        <Reveal delay={0.1} className="min-w-0 lg:col-span-7 lg:col-start-6">
+        <Reveal delay={0.1} className={`min-w-0 ${total ? "mx-auto w-full max-w-[24rem] lg:col-span-4 lg:col-start-6 lg:max-w-none" : "lg:col-span-7 lg:col-start-6"}`}>
           <figure>
             <BeforeAfterSlider
               key={i}
               before={current?.before}
               after={current?.after}
               alt={current?.alt ?? "Comparação de antes e depois"}
+              aspectClass={total ? "aspect-[5/8]" : undefined}
             />
             {current?.caption && <figcaption className="mt-5 text-sm text-ink-soft">{current.caption}</figcaption>}
           </figure>
         </Reveal>
 
         {many && (
-          <Reveal delay={0.15} className="min-w-0 lg:col-span-7 lg:col-start-6 lg:-mt-6">
+          <Reveal delay={0.15} className="min-w-0 lg:col-span-2 lg:col-start-11 lg:self-center">
             <ul
-              className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] md:mx-0 md:px-0 lg:mt-4 [&::-webkit-scrollbar]:hidden"
+              className="-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:justify-center md:mx-0 md:px-0 lg:flex-col lg:items-start lg:gap-4 lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden"
               aria-label="Casos"
             >
               {items.map((it, idx) => (
@@ -86,11 +87,11 @@ export function ResultsGallery({ items }: { items: ResultPair[] }) {
                     onClick={() => setI(idx)}
                     aria-label={`Ver caso ${idx + 1}`}
                     aria-current={idx === i ? "true" : undefined}
-                    className={`group relative block aspect-square w-20 overflow-hidden transition-opacity duration-500 sm:w-24 ${
+                    className={`group relative block aspect-[5/8] w-16 overflow-hidden sm:w-[4.5rem] transition-opacity duration-500 sm:w-24 ${
                       idx === i ? "opacity-100" : "opacity-55 hover:opacity-100"
                     }`}
                   >
-                    <Image src={it.after} alt="" fill sizes="96px" className="object-cover" />
+                    <Image src={it.after} alt="" fill sizes="80px" className="object-cover" />
                     <span
                       aria-hidden
                       className={`absolute inset-x-0 bottom-0 h-0.5 bg-bronze transition-transform duration-500 ${
