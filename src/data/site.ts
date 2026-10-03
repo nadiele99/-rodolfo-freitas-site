@@ -87,7 +87,7 @@ export const site = {
 
   instagram: {
     /** Sem o @. Ex.: "rodolfofreitas" */
-    handle: "", // TODO: inserir perfil oficial do Instagram
+    handle: "rodolfofreitastricologista",
   },
 
   // -------------------------------------------------------------- Endereço
