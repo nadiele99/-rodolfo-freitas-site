@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Tokens da marca — Rodolfo Freitas
+   ========================================================================== */
+@theme {
+  --color-forest: #1f3a2e;      /* verde floresta / profundo */
+  --color-forest-deep: #172d23;
+  --color-olive: #3a4b38;       /* verde oliva */
+  --color-bronze: #c49a6c;      /* acento — linhas, detalhes, sobre verde */
+  --color-bronze-deep: #87643f; /* bronze legível sobre creme (AA) */
+  --color-beige: #eaddcb;
+  --color-cream: #f8f3ed;
+  --color-paper: #fbf8f4;
+  --color-ink: #2b2420;         /* marrom quente — texto */
+  --color-ink-soft: #5e5249;    /* texto secundário (AA sobre creme) */
+  --color-line: #d9cbb8;
+
+  --font-serif: var(--font-bodoni), "Bodoni Moda", Georgia, serif;
+  --font-sans: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-forest);
+    color: var(--color-cream);
+  }
+  :focus-visible {
+    outline: 1.5px solid var(--color-bronze-deep);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Rótulo pequeno em caixa alta (eyebrow) */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  /* Container editorial: margens generosas, conteúdo contido */
+  .container-ed {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-ed { padding-inline: 3rem; }
+  }
+  @media (min-width: 1280px) {
+    .container-ed { padding-inline: 4rem; }
+  }
+  /* Ritmo vertical entre seções */
+  .section-y {
+    padding-block: 6.5rem;
+  }
+  @media (min-width: 1024px) {
+    .section-y { padding-block: 10rem; }
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-soft);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
+/* Revelação do monograma: o fio "cresce" a partir do folículo */
+@keyframes grow-up {
+  from { clip-path: inset(100% 0 0 0); opacity: 0; }
+  to   { clip-path: inset(0 0 0 0);    opacity: 1; }
+}
+.animate-grow-up {
+  animation: grow-up 1.8s var(--ease-soft) both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.animate-rise {
+  animation: rise 0.9s var(--ease-soft) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
