@@ -45,7 +45,11 @@ export const site = {
   state: "AM",
 
   /** URL pública definitiva (usada em canonical, sitemap e Open Graph). */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "https://rodolfo-freitas.vercel.app"),
 
   tagline: "Saúde capilar tratada de forma personalizada.",
   motto: "Cabelo é identidade.",
