@@ -120,9 +120,11 @@ export const site = {
 
   // ------------------------------------------------------------ Resultados
   /**
-   * Pares de antes/depois REAIS. Enquanto a lista estiver vazia, a seção
-   * mostra um comparador com placeholders identificados.
-   * Ex.: { before: "/images/resultados/caso-01-antes.jpg", after: "...", alt: "..." }
+   * Pares de antes/depois REAIS.
+   * Forma mais simples: colocar os arquivos em /public/images/resultados com
+   * os nomes  caso-01-antes.jpg  +  caso-01-depois.jpg  (sem limite de casos) —
+   * eles entram automaticamente. Esta lista é só para pares com legenda própria.
+   * Sem nenhuma foto, a seção mostra placeholders identificados.
    */
   results: [] as ResultPair[], // TODO
 
