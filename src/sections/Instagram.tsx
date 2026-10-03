@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { instagramHref, instagramLabel } from "@/lib/links";
+import { instagramHref } from "@/lib/links";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { InstagramIcon } from "@/components/icons";
@@ -31,7 +31,7 @@ export function Instagram() {
             Acompanhe o <span className="italic">dia a dia</span>
           </h2>
           <p className="mt-7 max-w-sm text-[0.97rem] leading-[1.85] text-ink-soft">
-            Conteúdos, bastidores e novidades no perfil {instagramLabel() !== "Instagram" ? instagramLabel() : "oficial"}.
+            Conteúdos, bastidores e novidades sobre saúde capilar.
           </p>
           <div className="mt-12">
             <Button href={instagramHref()} variant="outline">
