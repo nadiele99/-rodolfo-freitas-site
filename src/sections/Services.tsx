@@ -10,7 +10,7 @@ export function Services() {
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
             <SectionTitle
-              index="02"
+              index="03"
               eyebrow="Tratamentos"
               id="tratamentos-title"
               title={

@@ -8,7 +8,7 @@ export function Process() {
     <section id="atendimento" aria-labelledby="atendimento-title" className="section-y">
       <div className="container-ed">
         <SectionTitle
-          index="04"
+          index="05"
           eyebrow="Atendimento"
           id="atendimento-title"
           title={

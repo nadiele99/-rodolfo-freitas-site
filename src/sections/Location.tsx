@@ -11,7 +11,7 @@ export function Location() {
       <div className="container-ed grid gap-14 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
           <SectionTitle
-            index="05"
+            index="06"
             eyebrow="Localização"
             id="localizacao-title"
             title={

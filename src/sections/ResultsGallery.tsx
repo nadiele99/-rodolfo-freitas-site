@@ -24,7 +24,7 @@ export function ResultsGallery({ items }: { items: ResultPair[] }) {
       <div className="container-ed grid items-center gap-x-8 gap-y-10 lg:grid-cols-12 lg:gap-y-14">
         <Reveal as="header" className="min-w-0 lg:col-span-4 lg:row-span-2">
           <p className="eyebrow flex items-center gap-4 text-bronze-deep">
-            <span className="tabular-nums">03</span>
+            <span className="tabular-nums">04</span>
             <span aria-hidden className="h-px w-10 bg-bronze/70" />
             <span>Resultados</span>
           </p>

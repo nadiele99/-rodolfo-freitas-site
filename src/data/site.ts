@@ -64,7 +64,15 @@ export const site = {
   whatsapp: {
     /** Somente números, com DDI + DDD. Ex.: "5592999999999" */
     number: "", // TODO: inserir número oficial do WhatsApp
-    message: "Olá, Rodolfo! Gostaria de agendar uma avaliação.",
+    /**
+     * Mensagens pré-preenchidas. A origem ("site" / "Instagram") ajuda a saber
+     * de onde veio cada contato. {assunto} é trocado pelo tratamento ou queixa.
+     */
+    messages: {
+      site: "Olá, Rodolfo! Vim pelo site e gostaria de agendar uma avaliação.",
+      siteTopic: "Olá, Rodolfo! Vim pelo site e gostaria de saber mais sobre {assunto}.",
+      instagram: "Olá, Rodolfo! Vim pelo Instagram e gostaria de agendar um atendimento.",
+    },
   },
 
   /** Telefone para exibição (opcional). */
@@ -108,6 +116,57 @@ export const site = {
     /** Formação / registros profissionais. Preencher quando fornecido. */
     credentials: [] as string[], // TODO
   },
+
+  // -------------------------------------------------------------- Queixas
+  /**
+   * "Qual é a sua queixa?" — ajuda o visitante a se reconhecer rapidamente.
+   * Textos descrevem o que a pessoa percebe (sem diagnóstico nem promessa).
+   * `topic` entra na mensagem do WhatsApp: "...saber mais sobre {topic}."
+   */
+  concerns: [
+    {
+      slug: "pos-mounjaro",
+      title: "Queda após canetas emagrecedoras",
+      tag: "Mounjaro, Ozempic e similares",
+      text: "Você emagreceu rápido com o uso de canetas como Mounjaro ou Ozempic e passou a notar mais fios no banho, no travesseiro ou na escova.",
+      topic: "queda de cabelo após o uso de canetas emagrecedoras (Mounjaro/Ozempic)",
+    },
+    {
+      slug: "pos-parto",
+      title: "Queda pós-parto",
+      tag: "Meses depois do nascimento",
+      text: "Alguns meses depois do parto, os fios começaram a cair em quantidade maior do que o normal e isso tem te preocupado.",
+      topic: "queda de cabelo pós-parto",
+    },
+    {
+      slug: "hormonal",
+      title: "Queda hormonal",
+      tag: "Tireoide, menopausa, anticoncepcional",
+      text: "A queda apareceu junto com alguma mudança hormonal, como alterações de tireoide, menopausa ou troca e suspensão de anticoncepcional.",
+      topic: "queda de cabelo de origem hormonal",
+    },
+    {
+      slug: "calvicie",
+      title: "Calvície",
+      tag: "Entradas e topo da cabeça",
+      text: "As entradas estão mais marcadas ou o topo da cabeça ficou mais visível em fotos, na luz do banheiro ou com o cabelo molhado.",
+      topic: "calvície",
+    },
+    {
+      slug: "estresse",
+      title: "Queda por estresse",
+      tag: "Depois de uma fase difícil",
+      text: "Depois de um período de estresse, de uma doença ou de uma mudança brusca na rotina, o cabelo passou a cair mais de uma hora para outra.",
+      topic: "queda de cabelo por estresse",
+    },
+    {
+      slug: "afinamento",
+      title: "Afinamento dos fios",
+      tag: "Menos volume, mais couro à mostra",
+      text: "Os fios estão mais finos e frágeis, o rabo de cavalo diminuiu e o couro cabeludo aparece mais do que antes.",
+      topic: "afinamento dos fios",
+    },
+  ],
 
   // ------------------------------------------------------------- Serviços
   services: [

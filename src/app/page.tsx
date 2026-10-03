@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MotionProvider } from "@/components/MotionProvider";
 import { About } from "@/sections/About";
+import { Concerns } from "@/sections/Concerns";
 import { Hero } from "@/sections/Hero";
 import { Instagram } from "@/sections/Instagram";
 import { Location } from "@/sections/Location";
@@ -33,6 +34,7 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
+        <Concerns />
         <About />
         <Services />
         <Results />

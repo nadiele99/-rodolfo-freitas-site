@@ -65,7 +65,7 @@ export function LinkBio() {
 
         <nav aria-label="Links" className="mt-11 w-full">
           <a
-            href={whatsappHref()}
+            href={whatsappHref(site.whatsapp.messages.instagram)}
             target="_blank"
             rel="noopener noreferrer"
             className="animate-rise group flex min-h-16 w-full items-center justify-between rounded-full bg-forest pl-3 pr-6 text-cream transition-colors duration-500 hover:bg-forest-deep"

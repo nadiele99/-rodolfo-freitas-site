@@ -1,7 +1,13 @@
 import { site } from "@/data/site";
 
 /** Link do WhatsApp com mensagem pré-preenchida. */
-export function whatsappHref(message: string = site.whatsapp.message) {
+/** Mensagem padrão do site, ou sobre um assunto específico (tratamento / queixa). */
+export function siteMessage(topic?: string) {
+  const m = site.whatsapp.messages;
+  return topic ? m.siteTopic.replace("{assunto}", topic) : m.site;
+}
+
+export function whatsappHref(message: string = siteMessage()) {
   const text = encodeURIComponent(message);
   const number = site.whatsapp.number.replace(/\D/g, "");
   // Sem número configurado, o wa.me abre o WhatsApp para a pessoa escolher o contato.

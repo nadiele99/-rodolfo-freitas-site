@@ -1,5 +1,5 @@
 import type { Service } from "@/data/site";
-import { whatsappHref } from "@/lib/links";
+import { siteMessage, whatsappHref } from "@/lib/links";
 import { ArrowUpRight } from "lucide-react";
 import { ServiceGlyph } from "./icons";
 
@@ -12,7 +12,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
   const n = String(index + 1).padStart(2, "0");
   return (
     <a
-      href={whatsappHref(`Olá, Rodolfo! Gostaria de saber mais sobre ${service.name}.`)}
+      href={whatsappHref(siteMessage(service.name))}
       target="_blank"
       rel="noopener noreferrer"
       className="group relative grid grid-cols-[2.25rem_1fr_auto] items-center gap-x-4 py-7 sm:grid-cols-[3rem_3rem_1fr_auto] sm:gap-x-6 sm:py-8"

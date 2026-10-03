@@ -25,7 +25,7 @@ export function About() {
         </Reveal>
 
         <div className="lg:col-span-6 lg:col-start-7">
-          <SectionTitle index="01" eyebrow="Apresentação" title={site.about.title} id="sobre-title">
+          <SectionTitle index="02" eyebrow="Apresentação" title={site.about.title} id="sobre-title">
             {site.about.paragraphs.map((p) => (
               <p key={p} className="mt-5 first:mt-0">
                 {p}
